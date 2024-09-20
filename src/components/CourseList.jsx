@@ -3,24 +3,20 @@ import useZustandStore from '../app/zustandStore'
 
 const CourseList = () => {
 
-    const { courses, removeCourse, toggleCourseStatus } = useZustandStore(
-        (state) => ({
-            courses: state.courses,
-            removeCourse: state.removeCourse,
-            toggleCourseStatus: state.toggleCourseStatus
-        })
-    )
+    const courses = useZustandStore(state => state.courses);
+    const removeCourse = useZustandStore(state => state.removeCourse);
+    const toggleCourseStatus = useZustandStore(state => state.toggleCourseStatus);
 
     return (
         <>
             <ul>
                 {courses.map((course, i) => {
                     return (
-                        <React.Fragment key={i}>
+                        <div key={i}>
                             <li
                                 className={`course-item`}
                                 style={{
-                                    backgroudColor: course.completed ? "#00FF0044" : "white"
+                                    backgroudColor: course.completed ? "red" : "white"
                                 }}
                             >
                                 <span className="course-item-col-1">
@@ -39,7 +35,7 @@ const CourseList = () => {
                                     }}
                                     className="delete-btn">Delete</button>
                             </li>
-                        </React.Fragment>
+                        </div>
                     )
                 })}
             </ul>
