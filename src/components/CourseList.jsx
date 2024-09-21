@@ -3,9 +3,12 @@ import useZustandStore from '../app/zustandStore'
 
 const CourseList = () => {
 
-    const courses = useZustandStore(state => state.courses);
-    const removeCourse = useZustandStore(state => state.removeCourse);
-    const toggleCourseStatus = useZustandStore(state => state.toggleCourseStatus);
+    // const courses = useZustandStore(state => state.courses);
+    // const removeCourse = useZustandStore(state => state.removeCourse);
+    // const toggleCourseStatus = useZustandStore(state => state.toggleCourseStatus);
+
+
+    const { courses, removeCourse, toggleCourseStatus } = useZustandStore()
 
     return (
         <>
