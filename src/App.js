@@ -2,6 +2,7 @@ import './App.css';
 import { Toaster } from 'react-hot-toast';
 import CourseForm from './components/CourseForm';
 import CourseList from './components/CourseList';
+import FetchDataComponent from './components/FetchData';
 
 function App() {
 
@@ -19,10 +20,16 @@ function App() {
           >
             My Course list
           </h1>
+
           <CourseForm />
           <CourseList />
         </div>
       </div>
+
+      <h1>
+        Api Call Data
+      </h1>
+      <FetchDataComponent />
     </>
   );
 }
